@@ -1,3 +1,4 @@
+//load all products
 const loadProducts = () => {
   const url = `http://127.0.0.1:5500/db.json`;
   fetch(url)
@@ -11,26 +12,29 @@ const showProducts = (products) => {
 
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    // console.log(product);
-    //fix the 2nd problem (const image = product.images);
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
-    <img class="product-image" src=${image}></img>
+        <img class="product-image my-3" src=${image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h4>${product.title}</h4>
       <p>Category: ${product.category}</p>
-      <p>Rating: ${product.rating.rate}</p>
-      <p>Total Rating: ${product.rating.count}</p>
-      <h2>Price: $ ${product.price}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <h4>Price: $ ${product.price}</h4>
+      <div class="my-4 mx-auto d-flex justify-content-around">
+        <span class="fw-bold"><i class="fas fa-user-check text-primary"></i> ${product.rating.count}</span>
+        <span class="fw-bold"><i class="fas fa-star-half-alt text-warning"></i> ${product.rating.rate}</span>
+      </div>
+      <div class="d-flex justify-content-around">
+        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+        <button id="details-btn" class="btn btn-danger">Details</button></div>
+      </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+//product count
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -44,7 +48,7 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseInt(element);
+  const converted = parseFloat(element);
   return converted;
 };
 

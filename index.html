@@ -5,18 +5,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FakeStore</title>
+    <title>Ebazar BD</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- Latest compiled and minified CSS -->
-    <!-- <link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous" /> -->
+    <!-- bootstrap cdn added  -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous">
+
+    <!-- fontawesome added -->
+    <script src="https://kit.fontawesome.com/1e662fec97.js"
+      crossorigin="anonymous"></script>
     <!-- google Montserrat  font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,39 +26,35 @@
   </head>
 
   <body>
+    <!-- header starts -->
     <header>
       <section class="container my-5 mx-auto">
         <h1 class="text-center text-primary my-5">Ebazar BD</h1>
         <div class="input-group mb-3 w-50 mx-auto">
           <input type="search" class="form-control border border-info"
-            placeholder="Search products" aria-label="Recipient's username"
+            placeholder="Search products i.e. shirt" aria-label="Recipient's
+            username"
             aria-describedby="button-addon2">
           <button class="btn btn-success" type="button"
             id="search-btn">Search</button>
         </div>
       </section>
-      <!-- <div class="search-field">
-        <div class="search-box">
-          <input id="input-field" class="search-field" type="text" />
-          <button type="button" class="btn btn-primary search-button"
-            data-toggle="button" aria-pressed="false"
-            autocomplete="off" id="search-btn" onclick="loadProducts()">
-            Search
-          </button>
-        </div>
-      </div> -->
+
     </header>
     <main class="main">
       <section class="container">
 
         <div class="row">
+          <!-----------------------------
+           show all products section  
+          ---------------------------->
           <div class="col-md-9 col-lg-9 col-sm-7">
             <div id="all-products" class="">
-              <!-------------------------------
-                fix the first issue 
-              ------------------------->
             </div>
           </div>
+          <!----------------
+             cart section  
+            --------------->
           <div class="col-md-3 col-lg-3 col-sm-5 cart-main">
             <div class="cart" id="my-cart">
               <table class="table">
@@ -115,6 +111,7 @@
         </div>
       </section>
     </main>
+
     <footer></footer>
 
     <!-- add javascript  file  -->
